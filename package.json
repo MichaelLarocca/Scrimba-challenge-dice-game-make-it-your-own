@@ -1,0 +1,23 @@
+{
+  "name": "Scrimba-challenge-dice-game-make-it-your-own",
+  "version": "1.0.0",
+  "description": "Scrimba Module 4 CSS &amp; JavaScript fundamentals",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/CSS/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelLarocca/Scrimba-challenge-dice-game-make-it-your-own.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MichaelLarocca/Scrimba-challenge-dice-game-make-it-your-own/issues"
+  },
+  "homepage": "https://github.com/MichaelLarocca/Scrimba-challenge-dice-game-make-it-your-own#readme",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
