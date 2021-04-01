@@ -35,8 +35,6 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
     width: 100%;
     text-align: center; }
-  .container #reset-game {
-    display: none; }
   .container .btn {
     height: 50px;
     width: 150px;
@@ -51,6 +49,11 @@ body {
     background-color: yellow;
     cursor: pointer;
     box-shadow: 2px 2px 2px white, -2px -2px 2px blue; }
+  .container .btn-dark {
+    background-color: #333; }
+  .container .btn-dark:hover,
+  .container .btn-dark:focus {
+    background-color: gray !important; }
 
 .players {
   display: flex;
