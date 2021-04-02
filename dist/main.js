@@ -10,12 +10,41 @@ const btnResetGame = document.getElementById("reset-game");
 let activePlayerOne = false;
 let activePlayerTwo = false;
 
+const saberOn = document.getElementById("saber-on");
+const coolsaber = document.getElementById("coolsaber");
+const starWarsWin = document.getElementById("star-wars-win");
+const lasrhit1 = document.getElementById("lasrhit1");
+const lasrhit2 = document.getElementById("lasrhit2");
+const lasrhit3 = document.getElementById("lasrhit3");
+const lasrhit4 = document.getElementById("lasrhit4");
+
+saberOn.volume = 0.1;
+coolsaber.volume = 0.2;
+starWarsWin.volume = 1;
+lasrhit1.volume = 0.2;
+lasrhit2.volume = 0.2;
+lasrhit3.volume = 0.2;
+lasrhit4.volume = 0.2;
+
 function rollDie() {
     const randomNumberOneToSix = Math.floor(Math.random() * 6 + 1);
     return randomNumberOneToSix;
 } 
 
 function gameStart() {
+    btnRollDie.disabled = true;
+    btnResetGame.disabled = true;
+
+    playSaberOn();
+
+    setTimeout(() => {
+        playCoolSaber();
+    }, 750);
+
+    setTimeout(() => {
+        btnRollDie.disabled = false;
+    }, 4000);
+
     btnRollDie.style.display = "block";
     btnResetGame.style.display = "none";
 
@@ -40,11 +69,13 @@ function checkForGameOver() {
         if(scorePlayerOne >= 21 ){
             message.style.color = "red";
             message.textContent = `🔥Darth Vader Wins!🔥`; 
+            playStarWarsWin();
         }
 
         if(scorePlayerTwo >= 21 ){
             message.style.color = "blue";
             message.textContent = `🔥Obi-Wan Wins!🔥`; 
+            playStarWarsWin();
         }
 
         dieOne.classList.remove("active");
@@ -52,6 +83,10 @@ function checkForGameOver() {
 
         btnRollDie.style.display = "none";
         btnResetGame.style.display = "block";
+
+        setTimeout(() => {
+            btnResetGame.disabled = false;
+        }, 3000);
     }
 }
 
@@ -71,10 +106,14 @@ function chooseWhichPlayerStarts() {
 
 function btnRollDieCLicked() {
 
+    btnRollDie.disabled = true;
+
     const rollDieResult = rollDie();
 
     if(activePlayerOne) {
+        playSaberFight();
         scorePlayerOne += rollDieResult;
+        dieTwo.textContent = "-";
         dieOne.textContent = rollDieResult;
         scoreBoardPlayerOne.textContent = scorePlayerOne;
         activePlayerOne = false;
@@ -85,7 +124,9 @@ function btnRollDieCLicked() {
         dieOne.classList.remove("active");
         checkForGameOver();
     } else {
+        playSaberFight();
         scorePlayerTwo += rollDieResult;
+        dieOne.textContent = "-";
         dieTwo.textContent = rollDieResult;
         scoreBoardPlayerTwo.textContent = scorePlayerTwo;
         activePlayerTwo = false;
@@ -96,8 +137,65 @@ function btnRollDieCLicked() {
         dieTwo.classList.remove("active");
         checkForGameOver();
     }
+
+    setTimeout(() => {
+        btnRollDie.disabled = false;
+    }, 1500);
 }
+
+async function playSaberOn() {
+    try {
+      await saberOn.play();
+    } catch(err) {
+      console.log(err);
+    }
+  }
+
+  async function playCoolSaber() {
+    try {
+      await coolsaber.play();
+    } catch(err) {
+      console.log(err);
+    }
+  }
+
+  async function playStarWarsWin() {
+    try {
+      await starWarsWin.play();
+    } catch(err) {
+      console.log(err);
+    }
+  }
+
+  async function playSaberFight() {
+    try {
+
+        const x = Math.floor(Math.random() * 4 + 1);
+      
+        switch (x) {
+            case 1:
+                await lasrhit1.play();
+                break;
+            case 2:
+                await lasrhit2.play();
+                break;
+            case 3:
+                await lasrhit3.play();
+                break;
+            case 4: 
+            await lasrhit4.play();
+                break;  
+            default:
+                await lasrhit1.play();           
+        }
+
+
+        } catch(err) {
+        console.log(err);
+        }
+  }
 
 gameStart();
 btnRollDie.addEventListener("click", btnRollDieCLicked);
 btnResetGame.addEventListener("click", gameStart);
+
