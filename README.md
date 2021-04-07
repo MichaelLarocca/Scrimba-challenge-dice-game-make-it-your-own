@@ -26,7 +26,7 @@ I decided this to be an excellent opportunity to create a "seemingly easy" proje
 
 ### Star Wars Dice Duel
 
-![Star Wars Dice Duel](https://selftaughttxg.com/static/1a8355763a2320acfaf45bc607beba44/1cfc2/StarWarsDiceDuel.png);
+![Star Wars Dice Duel](https://selftaughttxg.com/static/1a8355763a2320acfaf45bc607beba44/1cfc2/StarWarsDiceDuel.png)
 
 ### [Play the game!](https://starwars-dice-duel.netlify.app/)
 
@@ -324,6 +324,8 @@ btnResetGame.addEventListener("click", gameStart);
 
 ![All too easy](https://selftaughttxg.com/static/6efdb517d56a160d8953188529b5e2d9/b06ae/AllTooEasy.png)
 
+*All rights reserved by Disney and Lucasfilm.*
+
 ---
 
 ### Adding sound
@@ -344,6 +346,8 @@ I found and used the lightsaber sounds from [soundboard.com](https://www.soundbo
 ### Coding the sound
 
 !["It's not my fault!"](https://selftaughttxg.com/static/a57889b88decdb27d58a12ee3ff919aa/3f520/ItsNotMyFault.png)
+
+*All rights reserved by Disney and Lucasfilm.*
 
 Star Wars fans will understand the irony of me correctly coding the syntax for the sound effects, but resulting in the program breaking and then me exclaiming, "**It's not my fault!**"
 
@@ -398,6 +402,7 @@ Once my program was "**fully operational**," I implemented
 setTimeout() methods to give the sounds the time they need to play out fully.
 
 ![fully operational](https://selftaughttxg.com/static/2bbb477f6efdfca1eebd7f630d6e2eb2/066f9/fully-operational-DS.jpg)
+
 *All rights reserved by Disney and Lucasfilm.*
 
 ---
